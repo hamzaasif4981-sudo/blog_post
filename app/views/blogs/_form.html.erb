@@ -1,0 +1,21 @@
+<%= form_with model: @blog do |f| %>
+
+  <div class="mb-2">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :short_description, class: "form-label" %>
+    <%= f.text_field :short_description, class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :post, class: "form-label" %>
+    <%= f.text_field :post, class: "form-control" %>
+  </div>
+
+  <div>
+  <%= f.submit %>
+  </div>
+<% end %>
