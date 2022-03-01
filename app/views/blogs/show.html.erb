@@ -18,7 +18,7 @@
   </table>
 </div>
 
-<h5 class="container mt-5 text-primary">Comments</h5>
+<h5 class="container mt-5 text-primary">Comments <%= @blog.comments.count %></h5>
 <div class="container">
   <% @blog.comments.each do |comment| %>
     <p><%= comment.body %></p>
