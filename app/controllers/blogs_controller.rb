@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
   end
 
   def new
@@ -20,12 +21,26 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:id])
   end
 
   def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: "Blog was successfuly updated"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @blog = Blog.find(params[:id])
+    @blog.destroy
+    if @blog.destroy
+      redirect_to blogs_path, notice: "Blog was successfuly deleted"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

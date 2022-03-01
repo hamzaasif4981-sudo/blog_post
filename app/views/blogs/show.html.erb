@@ -1,2 +1,19 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<h1 class="text-center mt-5"><%= @blog.name %>'s detail</h1>
+<div class="container mt-5">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>short description</th>
+      <th>Psot</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @blog.name %></td>
+        <td><%= @blog.short_description %></td>
+        <td><%= @blog.post %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
