@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_03_01_102603) do
   create_table "blogs", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "short_description"
-    t.text "post"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
