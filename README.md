@@ -1,24 +1,29 @@
-# README
+# README ( BLOG POST )
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Steps to get in to the application and running:
 
-Things you may want to cover:
+### **1. Check out to the repository by**
+`git clone git@github.com:hamzaasif4981-sudo/blog_post.git`
 
-* Ruby version
+### **2. Go to the project using:**
+`cd blog_post`
 
-* System dependencies
+### **3. Run this command to install ruby supported version:**
+`rbenv install 3.0.2`
 
-* Configuration
+### **4. Run this command to install all dependencies:**
 
-* Database creation
+`bundle install`
 
-* Database initialization
+### **5. Run this command to create database:**
 
-* How to run the test suite
+`rails db:create && rails db:migrate && rails db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
+### **6. If you face any errors, please run this command too:**
 
-* Deployment instructions
+`yarn install`
 
-* ...
+### **7. To run up the server, use:**
+
+`bin/dev`
+
