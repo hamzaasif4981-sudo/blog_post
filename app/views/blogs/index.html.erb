@@ -1,0 +1,22 @@
+<h1 class="text-center mt-5">Blogs</h1>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>short description</th>
+      <th>Psot</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.name %></td>
+        <td><%= blog.short_description %></td>
+        <td><%= blog.post %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
