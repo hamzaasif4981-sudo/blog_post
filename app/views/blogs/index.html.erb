@@ -2,21 +2,25 @@
   <div>
     <h1 class="font-weight-bold fw-bold">Blogs</h1>
   </div>
-  <div class="input-group mr-4">
-      <div class="me-5">
-        <a href="<%= new_blog_path %>">
-          <button class="btn rounded-pill bg-blue me-4"><b>New Blog</b></button>
-        </a>
-      </div>
+  <div>
+    <%= link_to "New blog", new_blog_path, class: "btn btn-warning rounded-pill" %>
   </div>
 </div>
-
-<% @blogs.each do |blog| %>
-
-<div class="container bg-white p-3 mt-5 border rounded">
-<h4><%= blog.title %></h4>
-<hr>
-<h5>Short description: <%= blog.short_description %></h5>
-<p><%= blog.body %></p>
+<hr class="container mt-5">
+<div class="my-5">
+  <% @blogs.each do |blog| %>
+    <div class="container bg-white p-3 mt-5">
+      <h4 class="fw-bolder"><%= blog.title %></h4>
+      <h5>Short description: <%= blog.short_description %></h5>
+      <p><%= blog.body %></p>
+      <div>
+  <span><%= link_to "Read", blog, class: "badge rounded-pill bg-primary text-decoration-none" %>
+    <%= link_to "Edit", edit_blog_path(blog), class: "badge rounded-pill bg-secondary text-decoration-none ms-2" %>
+    <%= link_to "Delete", blog_path(blog), method: :delete, class: "badge rounded-pill bg-danger text-decoration-none ms-2" %></span>
+        <span type="button" class=" float-end">
+          Comments <span class="badge bg-secondary"><%= blog.comments.count %></span>
+        </span>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% end %>
