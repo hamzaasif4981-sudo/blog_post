@@ -1,10 +1,12 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
+    @counts = Blog.all.order(impressionist_count: :desc)
   end
 
   def show
     @blog = Blog.find(params[:id])
+    impressionist(@blog)
   end
 
   def new
