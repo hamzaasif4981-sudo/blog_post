@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
-    @top_blogs = Blog.all.arrange_blogs
+    @top_blogs = Blog.arrange_blogs.limit(10)
   end
 
   def show
