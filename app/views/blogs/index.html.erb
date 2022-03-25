@@ -12,7 +12,7 @@
       <hr class="container mt-5">
 
       <div class="my-5">
-        <% @counts.each do |blog| %>
+        <% @blogs.each do |blog| %>
           <div class="container rounded py-4 px-4 mt-5 bg-light">
             <a>
               <h4 class="fw-bolder"><%= link_to blog.title, blog, class: "text-decoration-none text-black blog-show" %></h4>
@@ -24,7 +24,7 @@
               <%= link_to "Delete", blog_path(blog), method: :delete, class: "badge rounded-pill bg-danger text-decoration-none ms-1" %>
               <small class="text-muted ms-2 mt-1"><%= blog.created_at.strftime("%B %d") %></small>
               <span type="button" class=" float-end text-muted ms-2">Replies <span class="badge bg-secondary ms-1"><%= blog.comments.count %></span></span>
-              <span type="button" class=" float-end text-primary"><span class="badge bg-primary ms-1"><%= blog.impressionist_count %> <%= blog.impressionist_count == 1 ? 'view' : 'views'%></span></span>
+              <span type="button" class=" float-end text-primary"><span class="badge bg-primary ms-1"><%= blog.impressionist_count %> <%= blog.impressionist_count == 1 ? 'view' : 'views' %></span></span>
             </div>
           </div>
         <% end %>
@@ -34,7 +34,7 @@
     <div class="w-25 ms-5 mt-5">
       <div class="bg-light border pb-3 border-dark rounded col-md-2 position-fixed">
         <h6 class="fw-bold mt-4 py-2 text-center">Top 10 Popular Articles</h6>
-        <% @blogs.each do |blog| %>
+        <% @top_blogs.each do |blog| %>
           <div class="mx-2">
             <hr class="mx-3">
             <p class="ms-3"><%= link_to(blog.title, blog, class: 'text-decoration-none') %></p>

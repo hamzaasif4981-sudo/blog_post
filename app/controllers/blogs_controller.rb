@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
-    @counts = Blog.all.order(impressionist_count: :desc)
+    @top_blogs = Blog.all.arrange_blogs
   end
 
   def show
