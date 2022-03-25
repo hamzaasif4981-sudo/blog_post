@@ -34,12 +34,14 @@
     <div class="w-25 ms-5 mt-5">
       <div class="bg-light border pb-3 border-dark rounded col-md-2 position-fixed">
         <h6 class="fw-bold mt-4 py-2 text-center">Top 10 Popular Articles</h6>
+        <% count = 0 %>
         <% @top_blogs.each do |blog| %>
           <div class="mx-2">
             <hr class="mx-3">
             <p class="ms-3"><%= link_to(blog.title, blog, class: 'text-decoration-none') %></p>
             <small class="ms-3">Views: <%= blog.impressionist_count %></small>
           </div>
+          <% count >= 10 ? break : count += 1 %>
         <% end %>
       </div>
     </div>
