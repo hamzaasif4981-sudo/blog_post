@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to blogs_path, notice: "Blog was successfully created"
+      redirect_to blogs_path, notice: 'Blog was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice: "Blog was successfully updated"
+      redirect_to blogs_path, notice: 'Blog was successfully updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,14 +40,15 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.destroy
     if @blog.destroy
-      redirect_to blogs_path, notice: "Blog was successfully deleted"
+      redirect_to blogs_path, notice: 'Blog was successfully deleted'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   private
-    def blog_params
-      params.require(:blog).permit(:title, :short_description, :body)
-    end
+
+  def blog_params
+    params.require(:blog).permit(:title, :short_description, :body)
+  end
 end
