@@ -1,14 +1,4 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'actiontext.css';
-
-.blog-show:hover {
-  color: blue !important;
-}
-.bg-grey {
-background-color: lightgrey !important;
-}
-.scrollable {
-  position: absolute;
-  overflow-y: scroll;
-}
+@import "custom";

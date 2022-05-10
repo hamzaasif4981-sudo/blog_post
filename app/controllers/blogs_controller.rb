@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @blogs = Blog.all
     @top_blogs = Blog.arrange_blogs.limit(10)
@@ -16,7 +17,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to blogs_path, notice: "Blog was successfuly created"
+      redirect_to blogs_path, notice: "Blog was successfully created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +30,7 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice: "Blog was successfuly updated"
+      redirect_to blogs_path, notice: "Blog was successfully updated"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +40,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.destroy
     if @blog.destroy
-      redirect_to blogs_path, notice: "Blog was successfuly deleted"
+      redirect_to blogs_path, notice: "Blog was successfully deleted"
     else
       render :new, status: :unprocessable_entity
     end
